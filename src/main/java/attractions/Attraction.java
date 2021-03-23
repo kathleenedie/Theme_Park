@@ -27,4 +27,7 @@ public abstract class Attraction extends ThemePark implements IReviewed {
         return visitCount;
     }
 
+    public void setVisitCount(int visitCount) {
+        this.visitCount = visitCount;
+    }
 }
