@@ -1,9 +1,10 @@
 package stalls;
 
 
+import attractions.ThemePark;
 import behaviours.IReviewed;
 
-public abstract class Stall implements IReviewed {
+public abstract class Stall extends ThemePark implements IReviewed {
 
     private String name;
     private String ownerName;

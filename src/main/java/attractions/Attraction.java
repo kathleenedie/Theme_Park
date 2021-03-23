@@ -2,7 +2,9 @@ package attractions;
 
 import behaviours.IReviewed;
 
-public abstract class Attraction implements IReviewed {
+import java.util.ArrayList;
+
+public abstract class Attraction extends ThemePark implements IReviewed {
     private String name;
     private int rating;
     private int visitCount;

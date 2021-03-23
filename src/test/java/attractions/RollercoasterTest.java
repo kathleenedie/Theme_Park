@@ -16,7 +16,7 @@ public class RollercoasterTest {
     public void setUp() {
         rollerCoaster = new RollerCoaster("Blue Ridge", 10);
         visitor1 = new Visitor(11, 147, 2.50);
-        visitor2 = new Visitor(13, 146.5, 10.00);
+        visitor2 = new Visitor(27, 201.50, 20.00);
     }
 
     @Test
@@ -42,6 +42,16 @@ public class RollercoasterTest {
     @Test
     public void isNotTallEnoughOrOldEnoughForRollerCoaster(){
         assertEquals(false, rollerCoaster.isAllowedTo(visitor1));
+    }
+
+    @Test
+    public void chargeForUnder2m(){
+        assertEquals(8.40, rollerCoaster.priceFor(visitor1), 0.0);
+    }
+
+    @Test
+    public void chargedDoubleForOver2mHeight(){
+        assertEquals(16.80, rollerCoaster.priceFor(visitor2), 0.0);
     }
 
 }

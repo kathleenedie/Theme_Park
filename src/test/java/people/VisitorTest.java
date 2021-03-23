@@ -1,9 +1,12 @@
 package people;
 
+import attractions.Attraction;
+import attractions.RollerCoaster;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class VisitorTest {
 
@@ -27,5 +30,16 @@ public class VisitorTest {
     @Test
     public void hasMoney() {
         assertEquals(40.0, visitor.getMoney(), 0.1);
+    }
+
+    @Test
+    public void hasEmptyVisitedAttractionsList(){
+        assertEquals(0, visitor.getVisitedAttractions().size());
+    }
+
+    @Test
+    public void canAddVisitedAttractionToList(){
+        visitor.addAttraction(new RollerCoaster("Loop the Loop", 9));
+        assertNotNull(visitor.getVisitedAttractions());
     }
 }
